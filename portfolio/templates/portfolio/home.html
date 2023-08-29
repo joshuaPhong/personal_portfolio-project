@@ -1,0 +1,20 @@
+<h1>Home</h1>
+{#loop through the project object#}
+{% for project in projectObjects %}
+{#    access the project title#}
+    <h2>{{ project.title}}</h2>
+    <br>
+{#    access the project description#}
+    <p>{{ project.description }}</p>
+    <br>
+{#    access the project images url and use it in an image tag#}
+    <img src="{{ project.image.url }}" alt="a smily face emoji">
+{#    make a link from our project url#}
+    <br>
+{#    check if there is a url, we have blank is true #}
+    {% if project.url %}
+{#        create the link #}
+    <a href="{{ project.url }}">the project objects url</a>
+    {% endif %}
+
+{% endfor %}

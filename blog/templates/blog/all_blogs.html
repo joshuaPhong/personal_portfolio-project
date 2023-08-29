@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<h1>Our first django blog</h1>
+{#loop through the project object#}
+{% for blog in blogObject %}
+{#    access the project title#}
+    <h2>{{ blog.title}}</h2>
+    <br>
+{#    access the project description#}
+    <p>{{ blog.description }}</p>
+    <br>
+{# access the date value #}
+    <p>Blog Date: {{ blog.date }}</p>
+
+{% endfor %}
