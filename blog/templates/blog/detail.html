@@ -1,4 +1,15 @@
+{% extends 'personal_portfolio/base.html' %}
+{% block extra_head %}
+<title>Detail Blog</title>
+{% endblock %}
+
+{% block content %}
 <h1>Blog title: {{ blog.title }}</h1>
+
+    <p>Date: {{ blog.date|date:'F jS Y' }}</p>
+
+<p>Description: {{ blog.description }}</p>
 
 <a href="{% url 'blog:all_blogs' %}">Blogs</a>
 <a href="{% url 'home' %}">Home</a>
+{% endblock %}

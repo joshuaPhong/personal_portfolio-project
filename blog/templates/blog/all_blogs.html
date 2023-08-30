@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+{% extends 'personal_portfolio/base.html' %}
+{% block extra_head %}
     <title>Blog</title>
-</head>
+    {% endblock %}
+{% block content %}
 <h1>Our first django blog</h1>
 {#loop through the project object#}
 {% for blog in blogObject %}
@@ -11,9 +10,12 @@
     <a href="{% url 'blog:detail' blog.id %}"><h2>{{ blog.title}}</h2></a>
     <br>
 {#    access the project description#}
-    <p>{{ blog.description }}</p>
+{#    format the desc. we can truncate to limit what is shown#}
+    <p>{{ blog.description|truncatechars:100 }}</p>
     <br>
 {# access the date value #}
-    <p>Blog Date: {{ blog.date }}</p>
+{#    date can be formatted. see django docs. e.g.#}
+    <p>Blog Date: {{ blog.date|date:'M d Y' }}</p>
 
 {% endfor %}
+{% endblock %}

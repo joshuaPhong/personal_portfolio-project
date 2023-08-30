@@ -6,3 +6,9 @@ class BlogModel(models.Model):
     description = models.TextField()
     date = models.DateField()
 
+    def __str__(self):
+        """
+        This will show the title in the admin. Instead of showing object 1...n
+        """
+        return self.title
+
