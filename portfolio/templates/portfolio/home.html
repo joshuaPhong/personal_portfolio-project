@@ -1,4 +1,11 @@
 <h1>Home</h1>
+<a href="{% url 'blog:all_blogs' %}">Blogs</a>
+<br>
+
+<a href="{% url 'blog:all_blogs' %}"><img src="{% static 'portfolio/django2.jpeg' %}" alt="an image of the django movie poster"></a>
+
+
+
 {#loop through the project object#}
 {% for project in projectObjects %}
 {#    access the project title#}
@@ -18,3 +25,4 @@
     {% endif %}
 
 {% endfor %}
+{% endblock %}
